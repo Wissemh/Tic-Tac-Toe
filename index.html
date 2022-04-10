@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/d9bcd21957.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Jeu XO</title>
+</head>
+<body>
+    <main>
+        <section id="choice">
+            <h1>Choisissez</h1>
+            <div class="elements">
+                <button id="Xbutton"><i class="fa-regular fa-circle-xmark"></i></button>
+                <button id="Obutton"><i class="fa-regular fa-circle"></i></button>
+            </div>
+        </section>
+        <section class="flex-container">
+            <div id="0" class="flex-item"></div>
+            <div id="1" class="flex-item"></div>
+            <div id="2" class="flex-item"></div>
+            <div id="3" class="flex-item"></div>
+            <div id="4" class="flex-item "></div>
+            <div id="5" class="flex-item"></div>
+            <div id="6" class="flex-item"></div>
+            <div id="7" class="flex-item"></div>
+            <div id="8" class="flex-item"></div>
+        </section>
+        <button id="Restart">Restart</button>
+        <h1 id="winning"></h1>
+    </main>
+    <script src = "script.js"></script>
+    
+</body>
+</html>
