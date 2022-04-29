@@ -52,7 +52,7 @@ function checkWinner() {
             winner = player[0] ;
             player[1] = player[1]+1;    
             if(player[1]) { document.getElementById("PlayerScore").innerHTML = player[1];}
-            handleRestart(); 
+            handleRestart();   
         }
     else if ((tab[0]==computer[0] && tab[1]==computer[0] && tab[2] == computer[0] ) || 
     (tab[3]==computer[0] && tab[4]==computer[0] && tab[5] == computer[0] ) || 
@@ -131,13 +131,15 @@ function freeCase ()
     {   // priorité d'emplacement dans la case centrale 
         if (!tab[4]) {val=4;} 
         //Recherche si une case / deux vide dans une ligne puis une colonne 
-        else if (testLigne(tableauLigne)) {val=testLigne(tableauLigne);}
-        else if (testColonne(tableauColonne)) {val=testColonne(tableauColonne);}
+        else if (testLigne(tableauLigne)) {
+        val=testLigne(tableauLigne);}
+        else if (testColonne(tableauColonne)) {
+            val=testColonne(tableauColonne);}
         // sinon emplacement aléatoire
         else {
            ind = Math.floor((Math.random() * (tabModified.length - 1 )));
             val = tabModified[ind];
-        }
+      }
     }
     
     return val;
@@ -160,7 +162,9 @@ function handleX() {
             checkWinner();  
             elements[val1].style.cursor = "not-allowed";
             },500); 
+
         } 
+        associationElementsToTab();
     }
 
 }
@@ -171,16 +175,16 @@ for (var i=0 ;i < 9; i++) {
 //tableau des indices sur une même ligne
 function testLigne(tableau) {
     for (let j=0;j<3;j++) {
-        if ((tableau[j][0]) && (tableau[j][1]) && ((tableau[j][0])==(tableau[j][1])) && !(tableau[j][2])) 
+        if ((tab[tableau[j][0]]) && (tab[tableau[j][1]]) && ((tab[tableau[j][0]])==(tab[tableau[j][1]])) && !(tab[tableau[j][2]])) 
         {
-            return [tableau[j][2]];
+            return tab[tableau[j][2]];
         }
     }
 }
 //tableau des indices sur une même colonne
 function testColonne(tableauC) {
     for (let j=0;j<3;j++) {
-        if ((tableauC[j][0]) && (tableauC[j][1])&& ((tableauC[j][0]) == (tableauC[j][1])) && !(tableauC[j][2])) 
+        if ((tab[tableauC[j][0]]) && (tab[tableauC[j][1]])&& ((tab[tableauC[j][0]]) == (tab[tableauC[j][1]])) && !(tab[tableauC[j][2]])) 
         {
             return tab[tableauC[j][2]];
         }
